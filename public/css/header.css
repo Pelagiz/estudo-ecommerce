@@ -1,0 +1,313 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #292929;
+    height: 6rem;
+}
+
+
+header .container{
+    display: flex;
+    height: 100%;
+}
+
+header .container .logo{
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+header .container .logo a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+}
+
+/* CATEGORIES */
+
+header .container .categories{
+    position: relative;
+    display: none;
+}
+
+header .container .categories button{
+    border: none;
+    background: none;
+    height: 100%;
+    transition: background .7s ease;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+header .container .categories button:is(:hover, :focus){
+    background-color: #dbcece;
+}
+
+header .container .categories button {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+header .container .categories .container{
+    position: absolute;
+    display: block;
+}
+
+header .container .categories .container button{
+    width: 100%;
+}
+
+/* SEARCH */
+header .search{
+    display: none;
+    align-items: center;
+}
+
+header .search input{
+    border-radius: 0.25rem;
+    height: 2rem;
+    width: 15rem;
+}
+
+header .search input::placeholder{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+header .search button{
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-left: 1rem;
+}
+
+
+/* LOGIN */
+header .container .login{
+    position:relative;
+    margin-right: 1rem;
+    display: none;
+    cursor: pointer;
+}
+
+header .container .login .container{
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    top: -50%;
+    left: 25%;
+    transform: translate(-50%, 50%);
+    border: 1px solid #000;
+    border-radius: 0.3rem;
+    padding: 1rem;
+}
+
+header .container .login .container form{
+    display: flex;
+    flex-direction: column;
+}
+
+header .container .login .container form .title{
+    cursor: auto;
+}
+
+header .container .login .container form > input, 
+header .container .login .container form > button{
+    margin-top: 0.5rem;
+}
+
+/* LOGOUT */
+
+header .container .logout{
+    position: relative;
+    display: flex;
+    margin-right: 1rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+header .container .logout .container{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin-top: 1rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    top: 100%;
+    border: 1px solid #000;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+header .container .logout .container button{
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+header .container .logout .text{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+
+/* PURCHASE */
+header .container .purchase{
+    position: relative;
+    margin-right: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+header .container .purchase .cart{
+    position: absolute;
+    width: 25vw;
+    height: 100vh;
+    top: 0;
+    right: -2rem;
+    border-left: 1px solid #292929;
+    background-color: #f4f4f4;
+    z-index: 1;
+    cursor: auto;
+}
+
+header .container .purchase .cart .text{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-top: 0.75rem;
+    margin-left: 1rem;
+}
+
+header .container .purchase .cart .text::after{
+    display: block;
+    content: '';
+    border-bottom: 1px solid #292929;
+    width: 30%;
+    margin-right: 0.5rem;
+}
+
+header .container .bars{
+    display: flex;
+    margin-right: 2rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media (min-width: 600px){
+    header{
+        height: 3.5rem;
+    }
+    
+    header .container{
+        display: flex;
+    }
+    
+    header .container .logo{
+        margin-left: 1.5rem;
+        font-size: 1rem;
+    }
+    
+    header .container .categories{
+        display: none;
+    }
+
+    header .search{
+        display: flex;
+        align-items: center;
+    }
+    
+    header .search input{
+        border-radius: 0.2rem;
+        height: 2rem;
+        width: 20rem;
+    }
+    
+    header .search button{
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        padding-top: 0.10rem;
+        padding-bottom: 0.10rem;
+        margin-left: 0.5rem;
+    }
+    
+    header .container .login{
+        margin-right: 1rem;
+        display: none;
+    }
+    
+    header .container .purchase{
+        margin-right: 2rem;
+        display: none;
+    }
+
+    header .container .bars{
+        display: block;
+    }
+}
+
+
+@media (min-width: 1200px){
+    header{
+        height: 3.5rem;
+    }
+    
+    header .container{
+        display: flex;
+    }
+    
+    header .container .logo{
+        font-size: 1rem;
+    }
+    
+    header .container .categories{
+        display: block;
+    }
+
+    header .search{
+        display: flex;
+        align-items: center;
+    }
+    
+    header .search input{
+        border-radius: 0.2rem;
+        height: 2rem;
+        width: 20rem;
+    }
+    
+    header .search button{
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        padding-top: 0.10rem;
+        padding-bottom: 0.10rem;
+        margin-left: 0.5rem;
+    }
+    
+    header .container .login{
+        margin-right: 1rem;
+        display: block;
+    }
+    
+    header .container .purchase{
+        margin-right: 2rem;
+        display: block;
+    }
+
+    header .container .bars{
+        display: none;
+    }
+}

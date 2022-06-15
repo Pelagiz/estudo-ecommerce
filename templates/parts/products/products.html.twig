@@ -1,0 +1,8 @@
+<div class="products">
+    {% for product in products %}
+        <div class="product">
+            <h4 class="name">{{product.nome}}</h4>
+            <h4 class="price">{{product.precoUnitario}}</h4>
+        </div>
+    {% endfor %}
+</div>

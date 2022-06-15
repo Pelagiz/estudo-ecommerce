@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ecommerce{% endblock %}
+
+{% block add_in_head %}
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+
+    <script src="{{asset('js/login/switch.js')}}" defer ></script>
+    <script src="{{asset('js/categories/switch.js')}}" defer ></script>
+{% endblock %}
+
+{% block body %}
+
+    {% include 'parts/header/header.html.twig' %}
+
+    <main>
+        {% include 'parts/slideshow/slideshow.html.twig' %}
+        <h3>Produtos</h3>
+        {% include 'parts/products/products.html.twig' %}
+    </main>
+
+{% endblock %}

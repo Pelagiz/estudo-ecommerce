@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Fornecedor{% endblock %}
+
+{% block add_in_head %}
+    <link rel="stylesheet" href="{{asset('css/supplier/app.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/supplier/new.css')}}">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>Create new Fornecedor</h1>
+    
+        {{ include('fornecedor/_form.html.twig') }}
+    
+        <a href="{{ path('app_fornecedor_index') }}">back to list</a>
+    </main>
+{% endblock %}

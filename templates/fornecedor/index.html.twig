@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fornecedor index{% endblock %}
+
+{% block add_in_head %}
+    <link rel="stylesheet" href="{{asset('css/supplier/app.css')}}" />
+{% endblock %}
+
+{% block body %}
+
+    <main>
+        <h1>Fornecedor index</h1>
+    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Cnpj</th>
+                    <th>Descricao</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for supplier in suppliers %}
+                <tr>
+                    <td>{{ supplier.id }}</td>
+                    <td>{{ supplier.nome }}</td>
+                    <td>{{ supplier.cnpj }}</td>
+                    <td>{{ supplier.descricao }}</td>
+                    <td>
+                        <a href="{{ path('app_fornecedor_show', {'id': supplier.id}) }}">show</a>
+                        <a href="{{ path('app_fornecedor_edit', {'id': supplier.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Nenhum Fornecedor Cadastrado!</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    
+        <a href="{{ path('app_fornecedor_new') }}">Create new</a>
+    </main>
+{% endblock %}

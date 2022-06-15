@@ -1,0 +1,81 @@
+<header>
+    
+    <div class="container">
+        <div class="logo">
+            <a href="/">Ecommerce</a>
+        </div>
+        <div class="categories">
+            <button>
+                Categorias
+            </button>
+            <div class="container hide">
+                {% for category in categories %}
+                    <button>{{category.nome}}</button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="search">
+        <input type="text" name="" id="" placeholder="Pesquise um produto...">
+        <button><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="container">
+        {% if app.user == NULL %}
+            <div class="login">
+                <i class="fa fa-user fa-3x" aria-hidden="true"></i>
+
+                <div class="container hide">
+                    <form name="login_form" action="{{path('index')}}" method="POST">
+                        <h3 class="title">Login</h3>
+                        <label for="username" class="sr-only">Email</label>
+                        <input type="text" id="username" name="_username" placeholder="Digite o seu email..." value="{{ last_username }}" />
+                        <label for="password" class="sr-only">Senha</label>
+                        <input type="password" id="password" placeholder="Digite a sua senha..." name="_password" />
+        
+                        <input type="hidden" name="_target_path" value="/" />
+                        <button name="send" type="submit">
+                            Entrar
+                        </button>
+        
+                        <a href="/register">Não possui cadastro?</a>
+
+                        {% if error %}
+                            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        {% else %}
+            <div class="logout">
+                <h3 class="text">{{app.user.email}}</h3>
+                <div class="container hide">
+                    {% if is_granted('ROLE_WORKER') %}
+                        <form action="/suppliers">
+                            <button type="submit">Adicionar Fornecedores e Produtos</button>
+                        </form>
+                    {% endif %}
+                    <form action="/logout">
+                        <button type="submit">Sair</button>
+                    </form>
+                </div>
+            </div>
+        {% endif %}
+        <div class="purchase">
+            <span>
+                <i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i>
+            </span>
+
+            <div class="cart hide">
+                <h3 class="text">Carrinho</h3>
+            </div>
+        </div>
+        
+        <div class="bars">
+            <span>
+                <i class="fa fa-bars fa-3x" aria-hidden="true"></i>
+            </span>
+        </div>
+    </div>
+</header>
